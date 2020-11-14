@@ -1,0 +1,18 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Serve index page from public directory
+GET     /api                           controllers.FrontendController.index()
+
+# An example route (Prefix all API routes with apiPrefix defined in application.conf)
+GET     /api/getMetadata                controllers.HomeController.renderForm
+GET     /api/getdata                controllers.HomeController.getData
+
+# Serve static assets under public directory
+GET     /*file                      controllers.FrontendController.assetOrDefault(file)
+
+GET     /api/renderForm                 controllers.HomeController.renderForm
++nocsrf
+POST     /api/submitForm                 controllers.HomeController.test
+# POST     /api/submitForm                 controllers.HomeController.submitForm
